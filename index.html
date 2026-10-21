@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Damini Rewatkar — B.Tech Computer Technology student at Priyadarshini College of Engineering, Nagpur. Explore skills, projects, and contact details.">
+  <meta name="theme-color" content="#0b1020">
+  <title>Damini Rewatkar | Computer Technology Student</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: rgba(19, 27, 49, .82);
+      --panel-solid: #131b31;
+      --text: #f4f7ff;
+      --muted: #aab5cf;
+      --line: rgba(181, 198, 238, .16);
+      --accent: #8b9dff;
+      --accent2: #67e8d5;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .28);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0; color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(ellipse at 12% 2%, rgba(103,232,213,.12), transparent 35%),
+        radial-gradient(ellipse at 90% 15%, rgba(139,157,255,.16), transparent 34%),
+        var(--bg);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent2); outline-offset: 4px; }
+    .container { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11,16,32,.82); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.05rem; }
+    .brand span { color: var(--accent2); }
+    .nav-links { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: .92rem; }
+    .nav-links a:hover { color: var(--text); }
+    .menu-btn { display: none; border: 1px solid var(--line); color: var(--text); background: var(--panel); border-radius: 10px; padding: 8px 12px; }
+    .hero { min-height: 650px; display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 52px; padding-top: 72px; padding-bottom: 72px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--accent2); font-size: .84rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent2); box-shadow: 0 0 18px var(--accent2); }
+    h1 { font-size: clamp(3rem, 7vw, 5.7rem); letter-spacing: -.075em; line-height: .99; margin: 22px 0; }
+    h1 .gradient { background: linear-gradient(100deg, var(--accent2), var(--accent)); color: transparent; background-clip: text; -webkit-background-clip: text; }
+    .hero p { color: var(--muted); font-size: 1.08rem; max-width: 620px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 18px; border-radius: 12px; font-weight: 750; font-size: .93rem; border: 1px solid var(--line); transition: transform .2s, border-color .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(139,157,255,.7); }
+    .btn-primary { color: #08101b; background: linear-gradient(110deg, var(--accent2), #a9b5ff); border: 0; }
+    .hero-card { position: relative; padding: 26px; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(23,34,61,.95), rgba(15,22,41,.9)); border-radius: 30px; box-shadow: var(--shadow); overflow: hidden; }
+    .hero-card:before { content: ""; position: absolute; width: 190px; height: 190px; border-radius: 50%; background: rgba(139,157,255,.17); filter: blur(5px); right: -80px; top: -80px; }
+    .avatar { position: relative; display: grid; place-items: center; width: 150px; height: 150px; border-radius: 38px; margin: 8px auto 24px; background: linear-gradient(140deg, #67e8d5, #899bff 70%); color: #0b1020; font-size: 3rem; font-weight: 900; letter-spacing: -.08em; box-shadow: 0 18px 45px rgba(103,232,213,.14); }
+    .hero-card h2 { text-align: center; margin: 0; font-size: 1.45rem; }
+    .hero-card .role { text-align: center; color: var(--muted); margin: 4px 0 20px; }
+    .quick-info { display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .quick-info div { display: flex; gap: 11px; color: var(--muted); font-size: .92rem; overflow-wrap: anywhere; }
+    .quick-info strong { color: var(--text); min-width: 78px; }
+    section { padding: 70px 0; }
+    .section-head { margin-bottom: 28px; }
+    .section-kicker { color: var(--accent2); font-size: .78rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    h2.section-title { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.055em; line-height: 1.12; margin: 8px 0 12px; }
+    .section-intro { color: var(--muted); max-width: 680px; margin: 0; }
+    .panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow); padding: 28px; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; }
+    .about-copy p { margin-top: 0; color: var(--muted); }
+    .highlight-list { display: grid; gap: 13px; }
+    .highlight { padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.025); }
+    .highlight strong { display: block; font-size: .98rem; }
+    .highlight span { color: var(--muted); font-size: .9rem; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .skill { padding: 20px; border: 1px solid var(--line); border-radius: 17px; background: var(--panel); }
+    .skill .skill-icon { font-size: 1.45rem; margin-bottom: 8px; }
+    .skill h3 { margin: 0 0 5px; font-size: 1.02rem; }
+    .skill p { margin: 0; color: var(--muted); font-size: .88rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+    .tag { border: 1px solid rgba(139,157,255,.24); color: #dce2ff; background: rgba(139,157,255,.08); padding: 7px 11px; border-radius: 999px; font-size: .86rem; }
+    .timeline { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .timeline-item { display: grid; grid-template-columns: 52px 1fr; gap: 18px; align-items: start; }
+    .timeline-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 15px; color: var(--accent2); background: rgba(103,232,213,.1); border: 1px solid rgba(103,232,213,.18); font-size: 1.25rem; }
+    .timeline-item h3 { margin: 0 0 4px; }
+    .timeline-item .meta { color: var(--accent2); font-size: .9rem; margin-bottom: 8px; }
+    .timeline-item p { color: var(--muted); margin: 0; }
+    .project-card { display: grid; grid-template-columns: .8fr 1.2fr; gap: 24px; align-items: center; }
+    .project-art { min-height: 215px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 18px; background: radial-gradient(circle at 30% 25%, rgba(103,232,213,.22), transparent 35%), linear-gradient(135deg, #1a2442, #10172a); }
+    .browser { width: 76%; border: 1px solid rgba(255,255,255,.2); border-radius: 12px; overflow: hidden; background: #0c1222; transform: rotate(-4deg); box-shadow: 0 20px 40px rgba(0,0,0,.25); }
+    .browser-top { display: flex; gap: 5px; padding: 9px; border-bottom: 1px solid var(--line); }
+    .browser-top i { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .browser-body { padding: 18px 14px; }
+    .browser-line { height: 7px; border-radius: 8px; background: rgba(139,157,255,.55); margin: 8px 0; width: 80%; }
+    .browser-line.short { width: 48%; background: rgba(103,232,213,.6); }
+    .browser-blocks { display: flex; gap: 7px; margin-top: 16px; }
+    .browser-blocks span { height: 28px; flex: 1; border-radius: 5px; background: rgba(255,255,255,.08); }
+    .project-copy h3 { font-size: 1.45rem; margin: 0 0 8px; }
+    .project-copy p { color: var(--muted); margin-top: 0; }
+    .project-note { font-size: .85rem; color: var(--muted); margin-top: 12px; }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 20px; }
+    .contact-links { display: grid; gap: 12px; }
+    .contact-link { display: flex; align-items: center; gap: 13px; padding: 14px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255,255,255,.025); overflow-wrap: anywhere; }
+    .contact-link .symbol { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: rgba(139,157,255,.12); color: var(--accent); flex: 0 0 auto; }
+    .contact-link small { display: block; color: var(--muted); }
+    .contact-link strong { font-size: .9rem; }
+    .contact-message { display: flex; flex-direction: column; justify-content: center; }
+    .contact-message p { color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: .88rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .back-top { color: var(--accent2); }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; gap: 34px; padding-top: 58px; }
+      .hero-card { max-width: 520px; width: 100%; margin: 0 auto; }
+      .about-grid, .contact-grid, .project-card { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .project-art { min-height: 190px; }
+    }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 1100px); }
+      nav { min-height: 64px; flex-wrap: wrap; padding: 12px 0; }
+      .menu-btn { display: block; }
+      .nav-links { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 12px; padding: 8px 0 12px; }
+      .nav-links.open { display: flex; }
+      .hero { padding-top: 46px; padding-bottom: 45px; }
+      h1 { font-size: clamp(2.8rem, 16vw, 4.4rem); }
+      section { padding: 52px 0; }
+      .panel { padding: 21px; }
+      .skills-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .skill { padding: 15px; }
+      .timeline-item { grid-template-columns: 42px 1fr; gap: 12px; }
+      .timeline-icon { width: 40px; height: 40px; border-radius: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="#home">DAMINI<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <header class="container hero" id="home">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Computer Technology Student</div>
+        <h1>Hi, I'm<br><span class="gradient">Damini Rewatkar.</span></h1>
+        <p>
+          A B.Tech Computer Technology student at Priyadarshini College of Engineering, Nagpur,
+          interested in web development, programming, and building useful digital experiences.
+          I'm focused on learning by doing and growing through projects and collaboration.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">Explore My Work <span aria-hidden="true">↗</span></a>
+          <a class="btn" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Profile summary">
+        <div class="avatar" aria-label="Initials DR">DR</div>
+        <h2>Damini Rewatkar</h2>
+        <p class="role">B.Tech · Computer Technology</p>
+        <div class="quick-info">
+          <div><strong>Location</strong><span>Nagpur, Maharashtra, India</span></div>
+          <div><strong>College</strong><span>Priyadarshini College of Engineering</span></div>
+          <div><strong>Focus</strong><span>Web Development · Programming</span></div>
+        </div>
+      </aside>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">A little about me</div>
+          <h2 class="section-title">Curious mind. Practical learner.</h2>
+          <p class="section-intro">I'm building a strong foundation in technology, one concept and one project at a time.</p>
+        </div>
+        <div class="about-grid">
+          <div class="panel about-copy">
+            <p>
+              I'm currently pursuing my second year of B.Tech in Computer Technology at
+              Priyadarshini College of Engineering (PCE), Nagpur. I enjoy exploring how websites
+              work, learning programming concepts, and turning ideas into simple digital projects.
+            </p>
+            <p>
+              My goal is to keep improving my technical abilities through hands-on practice,
+              teamwork, internships, and continuous learning. I value creativity, clear
+              communication, and solving problems step by step.
+            </p>
+          </div>
+          <div class="panel highlight-list">
+            <div class="highlight"><strong>🎯 Career Goal</strong><span>Grow as a software and web development professional.</span></div>
+            <div class="highlight"><strong>🧩 Learning Style</strong><span>Practice, build projects, reflect, and improve.</span></div>
+            <div class="highlight"><strong>🤝 Team Interests</strong><span>Collaboration, event coordination, and creative activities.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">What I'm learning</div>
+          <h2 class="section-title">Skills & strengths</h2>
+          <p class="section-intro">A growing toolkit across web technologies, programming, and working with people.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill"><div class="skill-icon">⌘</div><h3>HTML</h3><p>Structuring accessible web pages.</p></article>
+          <article class="skill"><div class="skill-icon">✦</div><h3>CSS</h3><p>Responsive layouts and visual styling.</p></article>
+          <article class="skill"><div class="skill-icon">🐍</div><h3>Python</h3><p>Programming fundamentals and logic.</p></article>
+          <article class="skill"><div class="skill-icon">⚡</div><h3>JavaScript</h3><p>Learning interactive web experiences.</p></article>
+          <article class="skill"><div class="skill-icon">🌐</div><h3>Web Development</h3><p>Bringing page structure and design together.</p></article>
+          <article class="skill"><div class="skill-icon">🧠</div><h3>Problem-Solving</h3><p>Breaking tasks into clear, manageable steps.</p></article>
+        </div>
+        <div class="tags" aria-label="Soft skills">
+          <span class="tag">Communication</span><span class="tag">Teamwork</span><span class="tag">Creativity</span>
+          <span class="tag">Leadership & Coordination</span><span class="tag">Continuous Learning</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">My journey</div>
+          <h2 class="section-title">Education & activities</h2>
+        </div>
+        <div class="panel timeline">
+          <div class="timeline-item">
+            <div class="timeline-icon">🎓</div>
+            <div>
+              <h3>Bachelor of Technology (B.Tech) — Computer Technology</h3>
+              <div class="meta">Priyadarshini College of Engineering (PCE) · Nagpur, Maharashtra</div>
+              <p>Currently pursuing Second Year. Developing a foundation in computing, programming, and technology.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon">🎭</div>
+            <div>
+              <h3>SCOOP / SPOOC Cultural Team</h3>
+              <div class="meta">College activity & teamwork</div>
+              <p>Interested in cultural activities, event coordination, collaboration, and contributing to college events.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Selected work</div>
+          <h2 class="section-title">Projects</h2>
+          <p class="section-intro">A starting point for showcasing practical work as I continue to build and learn.</p>
+        </div>
+        <article class="panel project-card">
+          <div class="project-art" aria-hidden="true">
+            <div class="browser">
+              <div class="browser-top"><i></i><i></i><i></i></div>
+              <div class="browser-body">
+                <div class="browser-line short"></div><div class="browser-line"></div><div class="browser-line" style="width:65%"></div>
+                <div class="browser-blocks"><span></span><span></span><span></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-copy">
+            <div class="section-kicker">Personal project</div>
+            <h3>Personal Portfolio Website</h3>
+            <p>A personal website to introduce my background, highlight technical skills, share projects, and make it easy to connect with me.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive Design</span></div>
+            <p class="project-note">This portfolio is the featured project. Add links to more projects here as you complete them.</p>
+            <a class="btn" href="https://github.com/rewatkardamini1988-prog" target="_blank" rel="noopener noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="interests">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">What excites me</div>
+          <h2 class="section-title">Areas of interest</h2>
+        </div>
+        <div class="tags">
+          <span class="tag">Software Development</span><span class="tag">Web Development</span>
+          <span class="tag">Coding & Technology</span><span class="tag">Creative Problem-Solving</span>
+          <span class="tag">Innovation</span><span class="tag">Continuous Learning</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Let's connect</div>
+          <h2 class="section-title">Have an opportunity or idea?</h2>
+          <p class="section-intro">I'm open to learning opportunities, collaborative projects, and connecting with people in technology.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="panel contact-links">
+            <a class="contact-link" href="mailto:rewatkardamini1988@gmail.com">
+              <span class="symbol">✉</span><span><small>Email</small><strong>rewatkardamini1988@gmail.com</strong></span>
+            </a>
+            <a class="contact-link" href="tel:+917304190918">
+              <span class="symbol">☎</span><span><small>Phone</small><strong>+91 7304190918</strong></span>
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/damini-rewatkar-281349411/" target="_blank" rel="noopener noreferrer">
+              <span class="symbol">in</span><span><small>LinkedIn</small><strong>Connect professionally ↗</strong></span>
+            </a>
+            <a class="contact-link" href="https://github.com/rewatkardamini1988-prog" target="_blank" rel="noopener noreferrer">
+              <span class="symbol">⌘</span><span><small>GitHub</small><strong>Explore my repositories ↗</strong></span>
+            </a>
+          </div>
+          <div class="panel contact-message">
+            <h3>Thanks for visiting!</h3>
+            <p>I'm continuously learning and working to turn what I study into practical skills. Feel free to reach out through email or connect with me on LinkedIn.</p>
+            <div><a class="btn btn-primary" href="mailto:rewatkardamini1988@gmail.com">Say Hello <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Damini Rewatkar. Built with curiosity.</span>
+      <a class="back-top" href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
